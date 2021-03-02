@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Game</title>
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/oyun1.css">
+</head>
+
+<body>
+  <div class="container">
+
+
+    <h1 id="baslat" class="text-center p-3 m-4 border border-success bg-success text-white rounded-pill" onclick="oyunuBaslat()">Oyunu Başlat !</h1>
+
+    <div class="oyun-bolumu row ">
+      <div class="col-6 d-flex align-items-center justify-content-center flex-column">
+        <h2>Oyuncu 1</h2>
+        <img id="zar1" src="view/img/1.png" width="250px" alt="">
+      </div>
+      <div class="col-6 d-flex align-items-center justify-content-center flex-column">
+        <h2>Oyuncu 2</h2>
+        <img id="zar2" src="view/img/1.png" width="250px" alt="">
+      </div>
+
+
+    </div>
+      <h4 class="m-4 p-3 text-warning text-center" id="sonuc"></h4>
+  </div>
+  <script type="text/javascript">
+    function oyunuBaslat() {
+    var baslatElementi = document.querySelector("#baslat");
+    var oyuncu1Zar = document.querySelector("#zar1");
+    var oyuncu2Zar = document.querySelector("#zar2");
+    var sonuc = document.querySelector("#sonuc");
+
+    var rastgeleSayi1 =  Math.floor(Math.random() *6) + 1 ;
+    var rastgeleSayi2 =  Math.floor(Math.random() *6) + 1 ;
+
+    var resimAdresi1 = "view/img/"+ rastgeleSayi1 + ".png";
+    oyuncu1Zar.setAttribute("src" , resimAdresi1);
+    var resimAdresi2 = "view/img/"+ rastgeleSayi2 + ".png";
+    oyuncu2Zar.setAttribute("src" , resimAdresi2);
+
+    if (rastgeleSayi1 > rastgeleSayi2) {
+    sonuc.innerText =  "Oyuncu 1 Kazandı";
+    }
+    else if (rastgeleSayi2 > rastgeleSayi1)  {
+      sonuc.innerText =  "Oyuncu 2 Kazandı";
+    }
+    else {
+    sonuc.innerText =  "Oyun Berabere";
+    }
+
+    }
+  </script>
+
+</body>
+
+</html>

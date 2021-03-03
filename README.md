@@ -12,7 +12,7 @@
 ```
 $ git clone https://github.com/SedatBasaran14/DiceGame.git
 $ cd DiceGame
-
+$ Npm install
 ```
 
 ## DOM
